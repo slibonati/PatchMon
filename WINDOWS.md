@@ -138,4 +138,19 @@ Your system is now being monitored by PatchMon!
 
 ---
 
+## Remote Desktop (RDP)
+
+When the RDP viewer feature is enabled, you can connect to Windows hosts directly from the PatchMon UI.
+
+1. **Open the host** in PatchMon and go to the **Remote Desktop** tab (for Windows hosts this tab replaces the Terminal label).
+2. **Enter credentials:** Windows username, password, and optionally domain (use the computer name for local accounts, or leave domain blank for workgroup).
+3. **Connect:** The session opens in an embedded viewer in the browser. You can use **Open in new tab** to move the session to a full browser tab; the embedded view will close.
+4. **Disconnect:** Use **Disconnect** in the viewer, or close the tab if you opened in a new tab.
+
+RDP access uses [Apache Guacamole](https://guacamole.apache.org/) under the hood. The connection is established via your PatchMon server; no direct inbound RDP port is required on the Windows host from your browser. For self‑hosted deployments, Guacamole (and guacd) must be running and configured; see the Docker development compose or your deployment docs for setup.
+
+*SSH terminal access remains available for Windows hosts that have OpenSSH Server enabled.*
+
+---
+
 *For Linux agent installation and general documentation, see the [main README](README.md) and [docs.patchmon.net](https://docs.patchmon.net).*
